@@ -57,6 +57,9 @@ public class UtilsServices extends WebActionManager {
             case "Cruz de un Workspace" :
                 click(WorkspaceConstants.WORKSPACE_CROSS_BUTTON);
                 break;
+            case "CONFIGURACION de un Workspace" :
+                click(WorkspaceConstants.WORKSPACE_CONFIG_BUTTON, String.valueOf(2));
+                break;
         }
     }
 

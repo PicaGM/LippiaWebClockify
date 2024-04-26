@@ -14,16 +14,7 @@ public class WorkspaceSteps {
         WorkspaceServices.WorkspaceNameInput(workspaceName);
     }
 
-    @And("relleno la casilla de la ventana emergente con (.*)")
-    public void rellenoLaCasillaDeLaVentanaEmergenteCon(String deleteTxt) {
-        WorkspaceServices.WorkspaceDeleteInput(deleteTxt);
-    }
-
     @And("modifico la casilla de nombre con uno distinto")
     public void modificoLaCasillaDeNombreConUnoDistinto() {
-    }
-
-    @And("cambio la opcion de privacidad en el apartado de {string}")
-    public void cambioLaOpcionDePrivacidadEnElApartadoDe(String arg0) {
     }
 }
