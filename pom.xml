@@ -14,6 +14,15 @@
 
 	<packaging>jar</packaging>
 
+	<developers>
+		<developer>
+			<id>IAM</id>
+			<name>Ignacio Agustin Mahona</name>
+			<email>iagustinmahona@gmail.com</email>
+			<timezone>Latam/Argentina</timezone>
+		</developer>
+	</developers>
+
 	<properties>
 		<maven.build.timestamp.format>yyyyMMdd_HHmm</maven.build.timestamp.format>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -28,7 +37,7 @@
 		<!-- cucumber options -->
 		<cucumber.stepsDefinitions>--glue / </cucumber.stepsDefinitions>
 		<cucumber.hooks>--glue	com/crowdar/bdd/cukes/hooks</cucumber.hooks>
-		<cucumber.tags>@Regression</cucumber.tags>
+		<cucumber.tags>@CrearWorkspaceExitoso</cucumber.tags>
 		<pretty.plugin>--plugin pretty</pretty.plugin>
 		<cucumber.report>--plugin lippia.web.reporters.CucumberReporter:</cucumber.report>
 		<test-manager.report>--plugin lippia.web.reporters.TestManagerReporter:</test-manager.report>

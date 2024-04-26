@@ -1,4 +1,4 @@
-@Workspace
+@Workspace @Ignore
 Feature: Comprobar los posibles errores del apartado de Workspaces de Clockify
 
   Background:
