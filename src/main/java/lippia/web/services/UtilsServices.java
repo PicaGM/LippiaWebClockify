@@ -4,11 +4,28 @@ import com.crowdar.core.actions.WebActionManager;
 import lippia.web.constants.LoginConstants;
 import lippia.web.constants.ProjectConstants;
 import lippia.web.constants.WorkspaceConstants;
-
+import org.testng.Assert;
 import java.io.InputStream;
+import java.util.Objects;
 import java.util.Properties;
 
 public class UtilsServices extends WebActionManager {
+
+    public static void universalButton(String button) {
+        //click(LoginConstants.UNIVERSAL_BUTTON_1, String.valueOf(button));
+
+        if (!Objects.equals(button, "Iniciar sesión")) {
+            click(LoginConstants.UNIVERSAL_BUTTON_1, button);
+        } else if (button.equals("Iniciar sesión")) {
+            click(LoginConstants.UNIVERSAL_BUTTON_2, button);
+        }
+    }
+
+    public static void universalMSJ(String verifyMSJ) {
+        String msjText = WebActionManager.getText(LoginConstants.UNIVERSAL_MSJ);
+        Assert.assertEquals(msjText, verifyMSJ);
+    }
+
     public static void clickButton(String button) {
 
         switch (button) {
@@ -77,12 +94,6 @@ public class UtilsServices extends WebActionManager {
                 break;
         }
     }
-
-    //public static void message(String verifyMSJ) {
-    //    switch (verifyMSJ) {
-
-    //    }
-    //}
 
     public static void clickPopupButton(String popupButton) {
 

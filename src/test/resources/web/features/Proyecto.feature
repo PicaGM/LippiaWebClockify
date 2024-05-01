@@ -12,8 +12,7 @@ Feature: Comprobar el correcto funcionamiento del apartado proyectos de Clockify
     And hago click en el boton CREAR
     Then el proyecto se crea correctamente
 
-
-  @ModificarNombreDeProyecto @Smoke
+  @ModificarNombreDeProyectoExitoso @Smoke
   Scenario: Modificar el nombre de un proyecto de Clockify
     When hago click en el boton CONFIGURACION
     And modifico la casilla de nombre con uno distinto

@@ -21,7 +21,7 @@ public class LoginServices {
         WebActionManager.setInput(LoginConstants.EMAIL_INPUT_LOCATOR, email);
     }
     public static void verifyError (String msjError) {
-        String Error = WebActionManager.getText(LoginConstants.MENSAJE_ERROR_MAIL);
+        String Error = WebActionManager.getText(LoginConstants.UNIVERSAL_MSJ);
         Assert.assertEquals(Error, msjError);
     }
     public static void verifyLogout() {

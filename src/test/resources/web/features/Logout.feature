@@ -1,7 +1,7 @@
 @Logout @Regression
 Feature: Cierre de sesion en Clockify
 
-  @LogoutExitoso
+  @Smoke
   Scenario: Cierre de sesion de cuenta de Clockify
     Given estoy en Clockify con mi sesion iniciada
     When hago click en el dropdown Perfil

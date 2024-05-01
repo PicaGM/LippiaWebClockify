@@ -15,7 +15,7 @@ public class LoginSteps {
 
     @When("hago click en el boton (.*)")
     public void hagoClickEnElBotonIniciarSesionManualmente(String button) {
-        UtilsServices.clickButton(button);
+        UtilsServices.universalButton(button);
     }
 
     @And("escribo mi mail (.*) y contraseña (.*)")
@@ -35,7 +35,7 @@ public class LoginSteps {
 
     @Then("se muestra el mensaje (.*)")
     public void puedoComprobarElMensaje(String verifyMSJ) {
-
+        UtilsServices.universalMSJ(verifyMSJ);
     }
 
     @Then("salgo de mi cuenta y vuelvo a la pagina de login")
