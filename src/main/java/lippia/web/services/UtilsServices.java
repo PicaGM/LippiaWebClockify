@@ -12,76 +12,24 @@ import java.util.Properties;
 public class UtilsServices extends WebActionManager {
 
     public static void universalButton(String button) {
-        //click(LoginConstants.UNIVERSAL_BUTTON_1, String.valueOf(button));
-
         if (!Objects.equals(button, "Iniciar sesión")) {
-            click(LoginConstants.UNIVERSAL_BUTTON_1, button);
+            click(LoginConstants.UNIVERSAL_BUTTON_1, false, button);
         } else if (button.equals("Iniciar sesión")) {
             click(LoginConstants.UNIVERSAL_BUTTON_2, button);
         }
     }
 
     public static void universalMSJ(String verifyMSJ) {
-        String msjText = WebActionManager.getText(LoginConstants.UNIVERSAL_MSJ);
-        Assert.assertEquals(msjText, verifyMSJ);
-    }
-
-    public static void clickButton(String button) {
-
-        switch (button) {
-            case "Iniciar sesion manualmente" :
-                click(LoginConstants.MANUAL_LOGIN_BUTTON);
-                break;
-            case "CONTINUAR CON CORREO ELECTRONICO" :
-                click(LoginConstants.LOGIN_BUTTON);
-                break;
-            case "PROYECTOS" :
-                click(ProjectConstants.SIDEBAR_MENU, String.valueOf(4));
-                break;
-            case "CREAR NUEVO PROYECTO" :
-                click(ProjectConstants.NEW_PROJECT_BUTTON, false);
-                break;
-            case "CREAR" :
-                click(ProjectConstants.CREATE_PROJECT_BUTTON);
-                break;
-            case "CREAR de Workspace" :
-                click(WorkspaceConstants.CREATE_WORKSPACE_BUTTON);
-                break;
-            case "ARCHIVAR" :
-                click(ProjectConstants.ARCHIVE_PROJECT_BUTTON);
-                break;
-            case "ARCHIVAR de la ventana emergente" :
-                click(ProjectConstants.ARCHIVE_POPOUT_BUTTON);
-                break;
-            case "ELIMINAR" :
-                click(ProjectConstants.DELETE_BUTTON);
-                break;
-            case "ELIMINAR en la ventana emergente" :
-                click(ProjectConstants.DELETE_POPUP_BUTTON);
-                break;
-            case "Gestionar" :
-                click(WorkspaceConstants.WORKSPACE_GESTION_BUTTON);
-                break;
-            case "CREAR NUEVO ESPACIO DE TRABAJO" :
-                click(WorkspaceConstants.NEW_WORKSPACE_BUTTON, false);
-                break;
-            case "Cerrar sesión" :
-                click(LoginConstants.LOGOUT_BUTTON);
-                break;
-            case "ELIMINAR espacio de trabajo" :
-                click(WorkspaceConstants.DELETE_WORKSPACE_BUTTON);
-                break;
-            case "Cruz de un Workspace" :
-                click(WorkspaceConstants.WORKSPACE_CROSS_BUTTON);
-                break;
-            case "CONFIGURACION de un Workspace" :
-                click(WorkspaceConstants.WORKSPACE_CONFIG_BUTTON, String.valueOf(2));
-                break;
+        if (!Objects.equals(verifyMSJ, "Formato de correo electrónico no válido")) {
+            waitPresence(ProjectConstants.PROJECT_UPDATE_MSJ);
+            Assert.assertTrue(WebActionManager.isPresent(ProjectConstants.PROJECT_UPDATE_MSJ));
+        } else if (verifyMSJ.equals("Formato de correo electrónico no válido")) {
+            String msjText = WebActionManager.getText(LoginConstants.UNIVERSAL_MSJ, String.valueOf(verifyMSJ));
+            Assert.assertEquals(msjText, verifyMSJ);
         }
     }
 
     public static void clickDropdown(String dropdownButton) {
-
         switch (dropdownButton) {
             case "Opciones de proyecto" :
                 click(ProjectConstants.PROJECT_OPTIONS_BUTTON);
@@ -95,29 +43,20 @@ public class UtilsServices extends WebActionManager {
         }
     }
 
-    public static void clickPopupButton(String popupButton) {
-
-        switch (popupButton) {
-            case "ARCHIVAR" :
-                click(ProjectConstants.ARCHIVE_POPOUT_BUTTON);
-                break;
-            case "ELIMINAR" :
-                click(ProjectConstants.DELETE_POPUP_BUTTON, false);
-                break;
-        }
-    }
-
-    public static void login(String username, String password) throws Exception{
+    public static void login() throws Exception{
         Properties config = new Properties();
         InputStream input = null;
 
         try {
-            //input = getClass().getClassLoader().getResourceAsStream("config.properties");
+            input = UtilsServices.class.getClassLoader().getResourceAsStream("config.properties");
 
             config.load(input);
 
-            username = config.getProperty("clocky.username");
-            password = config.getProperty("clocky.password");
+            String mail = config.getProperty("clocky.mail");
+            String password = config.getProperty("clocky.password");
+
+            setInput(LoginConstants.EMAIL_INPUT_LOCATOR, mail);
+            setInput(LoginConstants.PASSWORD_INPUT_LOCATOR, password);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -129,7 +68,17 @@ public class UtilsServices extends WebActionManager {
                     e.printStackTrace();
                 }
             }
-
         }
     }
+
+    public static String randomName(int charAmount) {
+        String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        StringBuilder randomString = new StringBuilder();
+        for (int i = 0; i < charAmount; i++) {
+            int randomIndex = (int) (Math.random() * characters.length());
+            randomString.append(characters.charAt(randomIndex));
+        }
+        return String.valueOf(randomString);
+    }
+
 }

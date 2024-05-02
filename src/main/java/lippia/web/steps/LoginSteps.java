@@ -18,9 +18,9 @@ public class LoginSteps {
         UtilsServices.universalButton(button);
     }
 
-    @And("escribo mi mail (.*) y contraseña (.*)")
-    public void escriboMiMailYContrasena(String mail, String pass) {
-        LoginServices.login(mail, pass);
+    @And("escribo mi mail y contraseña")
+    public void escriboMiMailYContrasena() throws Exception {
+        UtilsServices.login();
     }
 
     @Then("se inicia sesion con mi correo")
