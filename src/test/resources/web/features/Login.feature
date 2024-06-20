@@ -1,7 +1,27 @@
-Feature: Login in clockify web
+@Login @Regression
+Feature: Login exitoso de la pagina de Clockify
 
-  @Regression @Clockify @Login
-  Scenario: Login with valid credentials
-    Given The client is on clockify page
-    When The client login with credentials email email and password password
-    Then The client verify clockify home page is displayed
+  Background:
+    Given estoy en la URL "https://app.clockify.me/es/login"
+
+  @LoginExitoso @Smoke
+  Scenario: Iniciar sesion exitosamente con mi correo
+    When hago click en el boton Iniciar sesión manualmente
+    And escribo mi mail y contraseña
+    And hago click en el boton Iniciar sesión
+    Then se inicia sesion con mi correo
+
+  @LoginConCorreoErroneo @Smoke
+  Scenario Outline: Inicio de sesion fallido con un correo no valido
+    When escribo mi correo electronico <mail>
+    And hago click en el boton Continuar con correo electrónico
+    Then se muestra el mensaje Formato de correo electrónico no válido
+
+    Examples:
+      | mail            |
+      | Pepito          |
+      | Pepito.com      |
+      | Pepitogmail.com |
+      | Pepito@gmail    |
+      | @gmail.com      |
+
