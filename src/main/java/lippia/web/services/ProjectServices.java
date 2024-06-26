@@ -21,6 +21,9 @@ public class ProjectServices {
             case "Workspace":
                 WebActionManager.setInput(WorkspaceConstants.WORKSPACE_NAME_INPUT, newName + UtilsServices.randomName(5));
                 break;
+            case "NewName":
+                WebActionManager.setInput(WorkspaceConstants.WORKSPACE_RENAME_INPUT, newName + UtilsServices.randomName(5), true);
+                break;
         }
     }
 }

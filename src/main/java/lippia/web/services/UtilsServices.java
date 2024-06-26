@@ -13,8 +13,10 @@ public class UtilsServices extends WebActionManager {
 
     public static void universalButton(String button) {
         if (!Objects.equals(button, "Iniciar sesión")) {
+            waitClickable(LoginConstants.UNIVERSAL_BUTTON_1, button);
             click(LoginConstants.UNIVERSAL_BUTTON_1, false, button);
         } else if (button.equals("Iniciar sesión")) {
+            waitClickable(LoginConstants.UNIVERSAL_BUTTON_2, button);
             click(LoginConstants.UNIVERSAL_BUTTON_2, button);
         }
     }
@@ -32,13 +34,14 @@ public class UtilsServices extends WebActionManager {
     public static void clickDropdown(String dropdownButton) {
         switch (dropdownButton) {
             case "Opciones de proyecto" :
-                click(ProjectConstants.PROJECT_OPTIONS_BUTTON);
+                click(ProjectConstants.PROJECT_OPTIONS_BUTTON, false);
                 break;
             case "Workspaces" :
-                click(WorkspaceConstants.DROPDOWN_WORKSPACE_BUTTON);
+                waitClickable(WorkspaceConstants.DROPDOWN_WORKSPACE_BUTTON);
+                click(WorkspaceConstants.DROPDOWN_WORKSPACE_BUTTON, false);
                 break;
             case "Perfil" :
-                click(LoginConstants.PROFILE_DROPDOWN_BUTTON);
+                click(LoginConstants.PROFILE_DROPDOWN_BUTTON, false);
                 break;
         }
     }

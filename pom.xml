@@ -37,7 +37,7 @@
 		<!-- cucumber options -->
 		<cucumber.stepsDefinitions>--glue / </cucumber.stepsDefinitions>
 		<cucumber.hooks>--glue	com/crowdar/bdd/cukes/hooks</cucumber.hooks>
-		<cucumber.tags>@Regression</cucumber.tags>
+		<cucumber.tags>@CancelEntry</cucumber.tags>
 		<pretty.plugin>--plugin pretty</pretty.plugin>
 		<cucumber.report>--plugin lippia.web.reporters.CucumberReporter:</cucumber.report>
 		<test-manager.report>--plugin lippia.web.reporters.TestManagerReporter:</test-manager.report>
@@ -162,6 +162,10 @@
 	<build>
 		<filters>
 			<filter>src/main/resources/cucumber.properties</filter>
+			<filter>src/main/resources/config.properties</filter>
+			<filter>src/main/resources/extent.properties</filter>
+			<filter>src/main/resources/log4j.properties</filter>
+			<filter>src/main/resources/webdrivermanager.properties</filter>
 		</filters>
 		<plugins>
 			<plugin>

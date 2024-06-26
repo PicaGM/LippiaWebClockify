@@ -2,19 +2,60 @@ package lippia.web.steps;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import lippia.web.services.ProjectServices;
 import lippia.web.services.TimeTrackerServices;
 
+import java.sql.Time;
+
 public class TimeTrackerSteps {
 
-    @When("especifico un horario en las casillas")
-    public void especificoUnHorarioEnLasCasillas() {
-        TimeTrackerServices.timeInput();
+    @When("escribo un (.*) y (.*) en las casillas")
+    public void especificoUnHorarioEnLasCasillas(String FirstInput, String SecondInput) {
+        TimeTrackerServices.timeInput(SecondInput, FirstInput);
     }
 
-    @And("especifico una fecha de trabajo")
-    public void especificoUnaFechaDeTrabajo() {
-        TimeTrackerServices.dateInput();
+    @And("elijo una (.*) de trabajo")
+    public void elijoUnaFechaDeTrabajo(String Date) {
+        TimeTrackerServices.dateInput(Date);
+    }
+
+    @Then("los datos no se guardan y se cancela la entrada")
+    public void losDatosNoSeGuardanYSeCancelaLaEntrada() {
+    }
+
+    @And("selecciono un (.*)")
+    public void seleccionoUn(String ProyectSelect) {
+        TimeTrackerServices.proyectSelector(ProyectSelect);
+    }
+
+    @And("especifico (.*) y (.*)")
+    public void especificoY(String ProyectDesc, String ProyectTag) {
+        TimeTrackerServices.descriptionSet(ProyectDesc);
+        TimeTrackerServices.tagSelector(ProyectTag);
+    }
+
+    @When("modifico el (.*), la (.*), el (.*), el (.*) y el (.*)")
+    public void modificoElHorarioLaFechaElTagElProyectoYElNombre() {
+    }
+
+    @And("hago click en algun lugar para finalizar la modificacion")
+    public void hagoClickEnAlgunLugarParaFinalizarLaModificacion() {
+    }
+
+    @When("selecciono la entrada de temporizador")
+    public void seleccionoLaEntradaDeTemporizador() {
+        TimeTrackerServices.timerSelector();
+    }
+
+    @And("especifico la (.*) del temporizador")
+    public void especificoLaDuracionDelTemporizador(String duracion) {
+        TimeTrackerServices.timerInput(duracion);
+    }
+
+    @And("inicio el temporizador pero lo descarto")
+    public void inicioElTemporizadorPeroLoDescarto() {
+        TimeTrackerServices.timerCancel();
     }
 }
