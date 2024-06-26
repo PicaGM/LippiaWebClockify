@@ -51,7 +51,7 @@ public class TimeTrackerServices {
     }
     public static void timerSelector() {
         WebActionManager.waitClickable(TimeTrackerConstants.TIMER_MODE_LOCATOR);
-        WebActionManager.click(TimeTrackerConstants.TIMER_MODE_LOCATOR);
+        WebActionManager.click(TimeTrackerConstants.TIMER_MODE_LOCATOR, false);
     }
 
     public static void timerCancel() {

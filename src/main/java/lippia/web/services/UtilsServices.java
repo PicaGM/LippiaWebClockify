@@ -1,9 +1,7 @@
 package lippia.web.services;
 
 import com.crowdar.core.actions.WebActionManager;
-import lippia.web.constants.LoginConstants;
-import lippia.web.constants.ProjectConstants;
-import lippia.web.constants.WorkspaceConstants;
+import lippia.web.constants.*;
 import org.testng.Assert;
 import java.io.InputStream;
 import java.util.Objects;
@@ -43,6 +41,8 @@ public class UtilsServices extends WebActionManager {
             case "Perfil" :
                 click(LoginConstants.PROFILE_DROPDOWN_BUTTON, false);
                 break;
+            case "Exportar" :
+                click(InformeConstants.EXPORT_DROPDOWN_LOCATOR, false);
         }
     }
 

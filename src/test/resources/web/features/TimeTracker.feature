@@ -16,7 +16,7 @@ Feature: Comprobar el correcto funcionamiento del Time Tracker de Clockify
 
   Examples:
     | horarioInicial | horarioFinal | fecha | proyecto | descripcion   | tag        |
-    | 1600           | 1935         | 23    | 3        | primerPrueba  | importante |
+    | 1600           | 1935         | 23    | 3        | primerPrueba  | Importante |
     | 1125           | 1530         | 16    | 1        | segundaPrueba | prueba     |
 
   @CancelEntry
