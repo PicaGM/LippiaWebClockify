@@ -8,8 +8,8 @@
       And hago click en el boton Esta semana
       And elijo una <fechaInicial> y <fechaFinal>
       And hago click en el dropdown Exportar
-      And hago click en el boton Guardar como PDF
-      Then se muestra el mensaje Exportando informe PDF
+      And elijo la opcion Guardar como PDF
+      Then se muestra una ventana de carga que exporta a PDF
 
     Examples:
       | fechaInicial | fechaFinal |
