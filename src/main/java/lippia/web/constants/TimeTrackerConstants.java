@@ -13,4 +13,9 @@ public class TimeTrackerConstants {
     public static final String TIMER_MODE_LOCATOR = "Xpath: //a[@data-cy='timer-mode']";
     public static final String SIDEBAR_TIMER_LOCATOR = "Xpath: //div[@class='cl-stopwatch-discard cl-px-1 cl-d-flex cl-align-items-center']";
     public static final String DISCARD_TIMER_LOCATOR = "Xpath: (//*[text()=' Descartar'])[1]";
+    public static final String EDIT_ENTRY_DESC_LOCATOR = "Xpath: //input[@class='cl-form-control cl-input-description cl-auto-pointer-event ng-untouched ng-pristine ng-valid'][1]";
+    public static final String EDIT_PROYECT_DROPDOWN = "Xpath: //div[@class='cl-dropdown cl-dropdown-large cl-d-lg-custom-flex ng-star-inserted'][2]";
+    public static final String EDIT_TAG_DROPDOWN = "Xpath: //tag-names[@class='cl-cut-text pointer cl-ml-2 cl-mr-auto-md-custom']";
+    public static final String EDIT_TIMER_INPUT = "Xpath: //input[@class='cl-form-control cl-input-time-picker cl-input-time-picker--time-format-24 ng-untouched ng-pristine ng-valid'][%s]";
+
 }

@@ -36,10 +36,10 @@ Feature: Comprobar el correcto funcionamiento del Time Tracker de Clockify
 
   @EditEntry
   Scenario Outline: Modificar registro de horas de Clockify
-    When modifico el <horarioI>, <horarioF>, la <fecha>, el <tag>, el <proyecto> y el <nombre>
+    When modifico el <horarioI>, <horarioF>, el <tag>, el <proyecto> y el <nombre>
     And hago click en algun lugar para finalizar la modificacion
     Then se muestra el mensaje Descripción actualizada con éxito
 
   Examples:
-    | horarioI | horarioF | fecha | tag | proyecto | nombre |
-    |          |          |       |     |          |        |
+    | horarioI | horarioF | tag    | proyecto | nombre      |
+    | 1200     | 1430     | prueba | 2        | editProyect |

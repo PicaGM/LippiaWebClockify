@@ -59,4 +59,10 @@ public class TimeTrackerServices {
         WebActionManager.click(TimeTrackerConstants.DISCARD_TIMER_LOCATOR);
         UtilsServices.universalButton(String.valueOf("Descartar"));
     }
+
+    public static void timerEdit(String horarioI, String horarioF, String tag, String proyecto, String nombre) {
+        WebActionManager.setInput(TimeTrackerConstants.EDIT_ENTRY_DESC_LOCATOR, nombre);
+        WebActionManager.setInput(TimeTrackerConstants.EDIT_TIMER_INPUT, horarioI, "3");
+        WebActionManager.setInput(TimeTrackerConstants.EDIT_TIMER_INPUT, horarioF, "4");
+    }
 }

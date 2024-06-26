@@ -36,8 +36,8 @@ public class TimeTrackerSteps {
         TimeTrackerServices.tagSelector(ProyectTag);
     }
 
-    @When("modifico el (.*), la (.*), el (.*), el (.*) y el (.*)")
-    public void modificoElHorarioLaFechaElTagElProyectoYElNombre() {
+    @When("modifico el (.*), el (.*), el (.*) y el (.*)")
+    public void modificoElHorarioLaFechaElTagElProyectoYElNombre(String horarioI, String horarioF, String tag, String proyecto, String nombre) {
     }
 
     @And("hago click en algun lugar para finalizar la modificacion")
