@@ -24,7 +24,9 @@ public class InformeServices {
     }
 
     public static void validatePDF() {
+        WebActionManager.getFluentWait();
         WebActionManager.waitVisibility(InformeConstants.EXPORT_WINDOW_LOCATOR);
         Assert.assertTrue(WebActionManager.isVisible(InformeConstants.EXPORT_WINDOW_LOCATOR));
+        WebActionManager.waitInvisibility(InformeConstants.EXPORT_WINDOW_LOCATOR);
     }
 }

@@ -15,6 +15,7 @@ public class LoginServices {
     }
     public static void mailInput(String email) {
         WebActionManager.setInput(LoginConstants.EMAIL_INPUT_LOCATOR, email);
+        WebActionManager.click(LoginConstants.LOGIN_BUTTON);
     }
 
     public static void verifyLogout() {

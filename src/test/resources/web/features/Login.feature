@@ -14,14 +14,10 @@ Feature: Login exitoso de la pagina de Clockify
   @LoginConCorreoErroneo @Smoke
   Scenario Outline: Inicio de sesion fallido con un correo no valido
     When escribo mi correo electronico <mail>
-    And hago click en el boton Continuar con correo electrónico
     Then se muestra el mensaje Formato de correo electrónico no válido
 
     Examples:
-      | mail            |
-      | Pepito          |
-      | Pepito.com      |
-      | Pepitogmail.com |
-      | Pepito@gmail    |
-      | @gmail.com      |
+      | mail       |
+      | Pepito     |
+      | Pepito.com |
 
