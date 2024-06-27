@@ -19,7 +19,7 @@ public class InformeSteps {
     }
 
     @And("elijo la opcion Guardar como PDF")
-    public void elijoLaOpcionGuardarComoPDF() {
+    public void elijoLaOpcionGuardarComoPDF() throws InterruptedException {
         InformeServices.convertToPDF();
     }
 

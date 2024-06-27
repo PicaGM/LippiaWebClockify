@@ -49,8 +49,8 @@ public class TimeTrackerServices {
         WebActionManager.click(TimeTrackerConstants.TIMER_INPUT_LOCATOR);
         WebActionManager.setInput(TimeTrackerConstants.TIMER_INPUT_LOCATOR, duracion);
     }
-    public static void timerSelector() {
-        WebActionManager.waitPresence(TimeTrackerConstants.TIMER_MODE_LOCATOR);
+    public static void timerSelector() throws InterruptedException {
+        Thread.sleep(5000);
         WebActionManager.waitClickable(TimeTrackerConstants.TIMER_MODE_LOCATOR);
         WebActionManager.click(TimeTrackerConstants.TIMER_MODE_LOCATOR, false);
     }

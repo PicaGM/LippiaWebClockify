@@ -18,13 +18,13 @@ public class InformeServices {
         WebActionManager.waitVisibility(InformeConstants.GRAPHICS_WINDOW_LOCATOR);
     }
 
-    public static void convertToPDF() {
+    public static void convertToPDF() throws InterruptedException{
+        Thread.sleep(2000);
         WebActionManager.waitClickable(InformeConstants.PDF_BUTTON_LOCATOR);
         WebActionManager.click(InformeConstants.PDF_BUTTON_LOCATOR, false);
     }
 
     public static void validatePDF() {
-        WebActionManager.getFluentWait();
         WebActionManager.waitVisibility(InformeConstants.EXPORT_WINDOW_LOCATOR);
         Assert.assertTrue(WebActionManager.isVisible(InformeConstants.EXPORT_WINDOW_LOCATOR));
         WebActionManager.waitInvisibility(InformeConstants.EXPORT_WINDOW_LOCATOR);

@@ -10,6 +10,7 @@ import java.util.Properties;
 public class UtilsServices extends WebActionManager {
 
     public static void universalButton(String button) {
+        waitInvisibility(InformeConstants.LOADER_POPUP_LOCATOR);
         if (!Objects.equals(button, "Iniciar sesión")) {
             waitClickable(LoginConstants.UNIVERSAL_BUTTON_1, button);
             click(LoginConstants.UNIVERSAL_BUTTON_1, false, button);

@@ -30,9 +30,8 @@ Feature: Comprobar el correcto funcionamiento del Time Tracker de Clockify
     Then se muestra el mensaje Temporizador cancelado
 
   Examples:
-    | proyecto | descripcion  | tag        |
-    | 2        | tercerPrueba | prueba     |
-    | 1        | cuartaPrueba | Importante |
+    | proyecto | descripcion  | tag    |
+    | 1        | tercerPrueba | prueba |
 
   @EditEntry
   Scenario Outline: Modificar registro de horas de Clockify

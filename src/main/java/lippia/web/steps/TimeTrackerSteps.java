@@ -50,7 +50,7 @@ public class TimeTrackerSteps {
     }
 
     @When("selecciono la entrada de temporizador")
-    public void seleccionoLaEntradaDeTemporizador() {
+    public void seleccionoLaEntradaDeTemporizador() throws InterruptedException {
         TimeTrackerServices.timerSelector();
     }
 
