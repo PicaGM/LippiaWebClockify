@@ -1,15 +1,23 @@
 package lippia.web.steps;
 
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import lippia.web.services.ApiHelperService;
 import lippia.web.services.ProjectServices;
 import lippia.web.services.TimeTrackerServices;
 
 import java.sql.Time;
 
 public class TimeTrackerSteps {
+
+    @Before(value = "@EditEntry")
+    public void createEntryBefore() {
+        ApiHelperService.createEntry();
+    }
 
     @When("escribo un (.*) y (.*) en las casillas")
     public void especificoUnHorarioEnLasCasillas(String FirstInput, String SecondInput) {
