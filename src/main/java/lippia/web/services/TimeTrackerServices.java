@@ -61,8 +61,13 @@ public class TimeTrackerServices {
     }
 
     public static void timerEdit(String horarioI, String horarioF, String tag, String proyecto, String nombre) {
-        WebActionManager.setInput(TimeTrackerConstants.EDIT_ENTRY_DESC_LOCATOR, nombre);
-        WebActionManager.setInput(TimeTrackerConstants.EDIT_TIMER_INPUT, horarioI, "3");
-        WebActionManager.setInput(TimeTrackerConstants.EDIT_TIMER_INPUT, horarioF, "4");
+        WebActionManager.setInput(TimeTrackerConstants.EDIT_ENTRY_DESC_LOCATOR, nombre, true);
+        WebActionManager.setInput(TimeTrackerConstants.EDIT_TIMER_INPUT, horarioI, "1");
+        WebActionManager.setInput(TimeTrackerConstants.EDIT_TIMER_INPUT, horarioF, true, false, "2");
+        WebActionManager.waitClickable(TimeTrackerConstants.EDIT_PROYECT_DROPDOWN);
+        WebActionManager.click(TimeTrackerConstants.EDIT_PROYECT_DROPDOWN, false);
+        WebActionManager.click(TimeTrackerConstants.PROYECT_SELECT_LOCATOR, false, proyecto);
+        WebActionManager.click(TimeTrackerConstants.EDIT_TAG_DROPDOWN, false);
+        WebActionManager.click(TimeTrackerConstants.TAG_SELECT_LOCATOR,false, tag);
     }
 }

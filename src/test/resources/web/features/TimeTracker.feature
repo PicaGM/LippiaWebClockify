@@ -37,7 +37,6 @@ Feature: Comprobar el correcto funcionamiento del Time Tracker de Clockify
   @EditEntry
   Scenario Outline: Modificar registro de horas de Clockify
     When modifico el <horarioI>, <horarioF>, el <tag>, el <proyecto> y el <nombre>
-    And hago click en algun lugar para finalizar la modificacion
     Then se muestra el mensaje Descripción actualizada con éxito
 
   Examples:
