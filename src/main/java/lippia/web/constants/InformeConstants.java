@@ -6,4 +6,6 @@ public class InformeConstants {
     public static final String INF_BUTTON_LOCATOR = "Xpath: //a[@class='cl-nav-link cl-dropdown-toggle cl-blue cl-d-none cl-d-lg-flex cl-justify-content-between']";
     public static final String PDF_BUTTON_LOCATOR = "Xpath: (//*[text()='Guardar como PDF'])[1]";
     public static final String EXPORT_WINDOW_LOCATOR = "Xpath: //div[@class='rotating-loader-logo-wrapper ng-tns-c88-0 ng-trigger ng-trigger-fadeMedium']";
+    public static final String GRAPHICS_WINDOW_LOCATOR = "Xpath: //canvas[@class='dashboard__bar-chart__canvas']";
+    public static final String LOADER_POPUP_LOCATOR = "Xpath: //div[@class='rotating-loader-logo-container ng-tns-c88-0']";
 }

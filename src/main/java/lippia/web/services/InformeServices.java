@@ -15,9 +15,11 @@ public class InformeServices {
 
     public static void infButton() {
         WebActionManager.click(InformeConstants.INF_BUTTON_LOCATOR, false);
+        WebActionManager.waitVisibility(InformeConstants.GRAPHICS_WINDOW_LOCATOR);
     }
 
     public static void convertToPDF() {
+        WebActionManager.waitClickable(InformeConstants.PDF_BUTTON_LOCATOR);
         WebActionManager.click(InformeConstants.PDF_BUTTON_LOCATOR, false);
     }
 
