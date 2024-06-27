@@ -49,15 +49,6 @@ public class ApiHelperService {
                 .delete(url);
     }
 
-    public static Response sendDeleteRequestParam(String url, String param, List<String> params) {
-        return RestAssured
-                .given()
-                .header("Content-Type", "application/json")
-                .header("x-api-key", key)
-                .queryParams(param, params)
-                .delete(url);
-    }
-
     public static void createEntry(){
         String body = "{\"start\": \"2024-06-27T09:00:00Z\",\"end\": \"2024-06-27T17:00:00Z\",\"billable\": true,\"description\": \"PROYECTO\",\"projectId\": \"6660db4e114db803b8dd508b\"};";
         String endpoint = baseUrl + "/workspaces/6532bafc671f3c6ed91e3332/time-entries";
