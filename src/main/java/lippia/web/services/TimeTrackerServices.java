@@ -50,6 +50,7 @@ public class TimeTrackerServices {
         WebActionManager.setInput(TimeTrackerConstants.TIMER_INPUT_LOCATOR, duracion);
     }
     public static void timerSelector() {
+        WebActionManager.waitPresence(TimeTrackerConstants.TIMER_MODE_LOCATOR);
         WebActionManager.waitClickable(TimeTrackerConstants.TIMER_MODE_LOCATOR);
         WebActionManager.click(TimeTrackerConstants.TIMER_MODE_LOCATOR, false);
     }
